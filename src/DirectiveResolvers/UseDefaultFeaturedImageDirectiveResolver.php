@@ -1,8 +1,10 @@
 <?php
-namespace PoP\API\DirectiveResolvers;
+namespace PoP\PostMedia\DirectiveResolvers;
 use PoP\PostMedia\Environment;
 use PoP\Posts\FieldResolver_Posts;
+use PoP\ComponentModel\FieldResolvers\PipelinePositions;
 use PoP\ComponentModel\FieldResolvers\FieldResolverInterface;
+use PoP\ComponentModel\Facades\Schema\FieldQueryInterpreterFacade;
 use PoP\ComponentModel\DirectiveResolvers\AbstractDirectiveResolver;
 
 class UseDefaultFeaturedImageDirectiveResolver extends AbstractDirectiveResolver
@@ -26,13 +28,34 @@ class UseDefaultFeaturedImageDirectiveResolver extends AbstractDirectiveResolver
         ];
     }
 
+    /**
+     * This directive must be executed after ResolveAndMerge, and modify values directly on the returned DB items
+     *
+     * @return void
+     */
+    public function getPipelinePosition(): string
+    {
+        return PipelinePositions::BACK;
+    }
+
     public function resolveDirective(FieldResolverInterface $fieldResolver, array &$resultIDItems, array &$idsDataFields, array &$dbItems, array &$dbErrors, array &$dbWarnings, array &$schemaErrors, array &$schemaWarnings, array &$schemaDeprecations)
     {
-        // Check all results with the result being NULL
-        if (true) {
-            // Replace it with the default image
-            if ($defaultFeaturedImageID = Environment::getDefaultFeaturedImageID()) {
-                // ...
+        // Replace all the NULL results with the default value
+        if ($defaultValue = Environment::getDefaultFeaturedImageID()) {
+            $fieldQueryInterpreter = FieldQueryInterpreterFacade::getInstance();
+            $fieldOutputKeyCache = [];
+            foreach ($idsDataFields as $id => $dataFields) {
+                foreach ($dataFields['direct'] as $field) {
+                    // Get the fieldOutputKey from the cache, or calculate it
+                    if (is_null($fieldOutputKeyCache[$field])) {
+                        $fieldOutputKeyCache[$field] = $fieldQueryInterpreter->getFieldOutputKey($field);
+                    }
+                    $fieldOutputKey = $fieldOutputKeyCache[$field];
+                    // If it is null, replace it with the default value
+                    if (is_null($dbItems[$id][$fieldOutputKey])) {
+                        $dbItems[$id][$fieldOutputKey] = $defaultValue;
+                    }
+                }
             }
         }
     }
