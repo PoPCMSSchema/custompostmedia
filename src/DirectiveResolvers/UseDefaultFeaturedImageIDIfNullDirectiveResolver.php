@@ -2,7 +2,7 @@
 namespace PoP\PostMedia\DirectiveResolvers;
 use PoP\PostMedia\Environment;
 use PoP\Posts\FieldResolver_Posts;
-use PoP\ComponentModel\DirectiveResolvers\AbstractUseDefaultValueIfNullDirectiveResolver;
+use PoP\Engine\DirectiveResolvers\AbstractUseDefaultValueIfNullDirectiveResolver;
 
 class UseDefaultFeaturedImageIDIfNullDirectiveResolver extends AbstractUseDefaultValueIfNullDirectiveResolver
 {
