@@ -1,7 +1,8 @@
 <?php
 namespace PoP\PostMedia\DirectiveResolvers;
+
 use PoP\PostMedia\Environment;
-use PoP\Posts\FieldResolver_Posts;
+use PoP\Posts\FieldResolvers\PostFieldResolver;
 use PoP\Engine\DirectiveResolvers\AbstractUseDefaultValueIfNullDirectiveResolver;
 
 class UseDefaultFeaturedImageIDIfNullDirectiveResolver extends AbstractUseDefaultValueIfNullDirectiveResolver
@@ -14,7 +15,7 @@ class UseDefaultFeaturedImageIDIfNullDirectiveResolver extends AbstractUseDefaul
     public static function getClassesToAttachTo(): array
     {
         return [
-            FieldResolver_Posts::class,
+            PostFieldResolver::class,
         ];
     }
     public static function getFieldNamesToApplyTo(): array
