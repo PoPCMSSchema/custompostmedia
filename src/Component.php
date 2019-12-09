@@ -33,5 +33,6 @@ class Component extends AbstractComponent
 
         // Initialize classes
         ContainerBuilderUtils::attachDirectiveResolversFromNamespace(__NAMESPACE__.'\\DirectiveResolvers');
+        ContainerBuilderUtils::attachFieldResolversFromNamespace(__NAMESPACE__.'\\FieldResolvers');
     }
 }
