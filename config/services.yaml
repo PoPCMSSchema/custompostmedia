@@ -2,3 +2,7 @@ services:
     PoP\PostMedia\DirectiveResolvers\:
         resource: '../src/DirectiveResolvers/*'
         public: true
+
+    PoP\PostMedia\FieldResolvers\:
+        resource: '../src/FieldResolvers/*'
+        public: true
