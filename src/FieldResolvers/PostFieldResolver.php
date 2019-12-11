@@ -6,7 +6,7 @@ use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\Posts\TypeResolvers\PostTypeResolver;
-use PoP\Media\TypeDataResolvers\MediaTypeDataResolver;
+use PoP\Media\TypeResolvers\MediaTypeResolver;
 use PoP\Media\Misc\MediaHelpers;
 
 class PostFieldResolver extends AbstractDBDataFieldResolver
@@ -84,13 +84,13 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
         return parent::getSchemaFieldArgs($typeResolver, $fieldName);
     }
 
-    public function resolveFieldDefaultTypeDataResolverClass(TypeResolverInterface $typeResolver, string $fieldName, array $fieldArgs = []): ?string
+    public function resolveFieldTypeResolverClass(TypeResolverInterface $typeResolver, string $fieldName, array $fieldArgs = []): ?string
     {
         switch ($fieldName) {
             case 'featuredimage':
-                return MediaTypeDataResolver::class;
+                return MediaTypeResolver::class;
         }
 
-        return parent::resolveFieldDefaultTypeDataResolverClass($typeResolver, $fieldName, $fieldArgs);
+        return parent::resolveFieldTypeResolverClass($typeResolver, $fieldName, $fieldArgs);
     }
 }
