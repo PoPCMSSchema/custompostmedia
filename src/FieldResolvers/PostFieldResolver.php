@@ -74,9 +74,9 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
             case 'featuredimage-props':
                 return [
                     [
-                        'name' => 'size',
-                        'type' => SchemaDefinition::TYPE_STRING,
-                        'description' => $translationAPI->__('Size of the image', 'pop-media'),
+                        SchemaDefinition::ARGNAME_NAME => 'size',
+                        SchemaDefinition::ARGNAME_TYPE => SchemaDefinition::TYPE_STRING,
+                        SchemaDefinition::ARGNAME_DESCRIPTION => $translationAPI->__('Size of the image', 'pop-media'),
                     ],
                 ];
         }
