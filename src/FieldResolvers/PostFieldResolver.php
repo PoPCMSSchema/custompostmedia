@@ -40,7 +40,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
 			'has-featuredimage' => $translationAPI->__('Does the post have a featured image?', 'pop-media'),
-            'featuredimage' => $translationAPI->__('ID of the featured image DB object', 'pop-media'),
+            'featuredimage' => $translationAPI->__('Featured image from this post', 'pop-media'),
             'featuredimage-props' => $translationAPI->__('Properties (url, width and height) of the featured image', 'pop-media'),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
