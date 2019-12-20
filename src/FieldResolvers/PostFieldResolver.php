@@ -52,13 +52,13 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
         $post = $resultItem;
         switch ($fieldName) {
             case 'has-featuredimage':
-                return $cmsmediapostsapi->hasPostThumbnail($typeResolver->getId($post));
+                return $cmsmediapostsapi->hasPostThumbnail($typeResolver->getID($post));
 
             case 'featuredimage':
-                return $cmsmediapostsapi->getPostThumbnailId($typeResolver->getId($post));
+                return $cmsmediapostsapi->getPostThumbnailId($typeResolver->getID($post));
 
             case 'featuredimage-props':
-                if ($image_id = $cmsmediapostsapi->getPostThumbnailId($typeResolver->getId($post))) {
+                if ($image_id = $cmsmediapostsapi->getPostThumbnailId($typeResolver->getID($post))) {
                     return MediaHelpers::getAttachmentImageProperties($image_id, $fieldArgs['size']);
                 }
                 return null;
