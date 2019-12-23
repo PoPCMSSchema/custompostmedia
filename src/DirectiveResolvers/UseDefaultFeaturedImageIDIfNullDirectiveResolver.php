@@ -2,7 +2,7 @@
 namespace PoP\PostMedia\DirectiveResolvers;
 
 use PoP\PostMedia\Environment;
-use PoP\Posts\TypeResolvers\PostTypeResolver;
+use PoP\Content\FieldInterfaces\ContentEntityFieldInterfaceResolver;
 use PoP\Engine\DirectiveResolvers\AbstractUseDefaultValueIfNullDirectiveResolver;
 
 class UseDefaultFeaturedImageIDIfNullDirectiveResolver extends AbstractUseDefaultValueIfNullDirectiveResolver
@@ -15,7 +15,7 @@ class UseDefaultFeaturedImageIDIfNullDirectiveResolver extends AbstractUseDefaul
     public static function getClassesToAttachTo(): array
     {
         return [
-            PostTypeResolver::class,
+            ContentEntityFieldInterfaceResolver::class,
         ];
     }
     public static function getFieldNamesToApplyTo(): array
