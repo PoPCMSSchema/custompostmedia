@@ -21,18 +21,18 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
     public static function getFieldNamesToResolve(): array
     {
         return [
-            'has-featuredimage',
+            'hasFeaturedimage',
             'featuredimage',
-            'featuredimage-props',
+            'featuredImageProps',
         ];
     }
 
     public function getSchemaFieldType(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
         $types = [
-			'has-featuredimage' => SchemaDefinition::TYPE_BOOL,
+			'hasFeaturedimage' => SchemaDefinition::TYPE_BOOL,
             'featuredimage' => SchemaDefinition::TYPE_ID,
-            'featuredimage-props' => SchemaDefinition::TYPE_OBJECT,
+            'featuredImageProps' => SchemaDefinition::TYPE_OBJECT,
         ];
         return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
     }
@@ -41,9 +41,9 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-			'has-featuredimage' => $translationAPI->__('Does the post have a featured image?', 'pop-media'),
+			'hasFeaturedimage' => $translationAPI->__('Does the post have a featured image?', 'pop-media'),
             'featuredimage' => $translationAPI->__('Featured image from this post', 'pop-media'),
-            'featuredimage-props' => $translationAPI->__('Properties (url, width and height) of the featured image', 'pop-media'),
+            'featuredImageProps' => $translationAPI->__('Properties (url, width and height) of the featured image', 'pop-media'),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
@@ -53,13 +53,13 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
         $cmsmediapostsapi = \PoP\Media\PostsFunctionAPIFactory::getInstance();
         $post = $resultItem;
         switch ($fieldName) {
-            case 'has-featuredimage':
+            case 'hasFeaturedimage':
                 return $cmsmediapostsapi->hasPostThumbnail($typeResolver->getID($post));
 
             case 'featuredimage':
                 return $cmsmediapostsapi->getPostThumbnailId($typeResolver->getID($post));
 
-            case 'featuredimage-props':
+            case 'featuredImageProps':
                 if ($image_id = $cmsmediapostsapi->getPostThumbnailId($typeResolver->getID($post))) {
                     return MediaHelpers::getAttachmentImageProperties($image_id, $fieldArgs['size']);
                 }
@@ -73,7 +73,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         switch ($fieldName) {
-            case 'featuredimage-props':
+            case 'featuredImageProps':
                 return [
                     [
                         SchemaDefinition::ARGNAME_NAME => 'size',
