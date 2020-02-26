@@ -22,7 +22,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
     {
         return [
             'hasFeaturedimage',
-            'featuredimage',
+            'featuredImage',
             'featuredImageProps',
         ];
     }
@@ -31,7 +31,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
     {
         $types = [
 			'hasFeaturedimage' => SchemaDefinition::TYPE_BOOL,
-            'featuredimage' => SchemaDefinition::TYPE_ID,
+            'featuredImage' => SchemaDefinition::TYPE_ID,
             'featuredImageProps' => SchemaDefinition::TYPE_OBJECT,
         ];
         return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
@@ -42,7 +42,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
 			'hasFeaturedimage' => $translationAPI->__('Does the post have a featured image?', 'pop-media'),
-            'featuredimage' => $translationAPI->__('Featured image from this post', 'pop-media'),
+            'featuredImage' => $translationAPI->__('Featured image from this post', 'pop-media'),
             'featuredImageProps' => $translationAPI->__('Properties (url, width and height) of the featured image', 'pop-media'),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
@@ -56,7 +56,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
             case 'hasFeaturedimage':
                 return $cmsmediapostsapi->hasPostThumbnail($typeResolver->getID($post));
 
-            case 'featuredimage':
+            case 'featuredImage':
                 return $cmsmediapostsapi->getPostThumbnailId($typeResolver->getID($post));
 
             case 'featuredImageProps':
@@ -89,7 +89,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
     public function resolveFieldTypeResolverClass(TypeResolverInterface $typeResolver, string $fieldName, array $fieldArgs = []): ?string
     {
         switch ($fieldName) {
-            case 'featuredimage':
+            case 'featuredImage':
                 return MediaTypeResolver::class;
         }
 

@@ -21,7 +21,7 @@ class UseDefaultFeaturedImageIDIfNullDirectiveResolver extends AbstractUseDefaul
     public static function getFieldNamesToApplyTo(): array
     {
         return [
-            'featuredimage',
+            'featuredImage',
         ];
     }
 
