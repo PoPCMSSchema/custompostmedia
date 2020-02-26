@@ -7,6 +7,11 @@ use PoP\Engine\DirectiveResolvers\AbstractUseDefaultValueIfNullDirectiveResolver
 
 class UseDefaultFeaturedImageIDIfNullDirectiveResolver extends AbstractUseDefaultValueIfNullDirectiveResolver
 {
+    const DIRECTIVE_NAME = 'defaultFeaturedImage';
+    public static function getDirectiveName(): string {
+        return self::DIRECTIVE_NAME;
+    }
+
     public static function getClassesToAttachTo(): array
     {
         return [
@@ -15,7 +20,6 @@ class UseDefaultFeaturedImageIDIfNullDirectiveResolver extends AbstractUseDefaul
     }
     public static function getFieldNamesToApplyTo(): array
     {
-        // By default, apply to all fieldNames
         return [
             'featuredimage',
         ];
