@@ -20,7 +20,8 @@
     "require": {
         "php" : "~7.1",
         "getpop/posts": "^1.0@dev",
-        "getpop/media": "^1.0@dev"
+        "getpop/media": "^1.0@dev",
+        "getpop/basic-directives": "^1.0@dev"
     },
     "require-dev": {
         "phpunit/phpunit" : ">=7.0",
