@@ -8,7 +8,8 @@ use PoP\BasicDirectives\DirectiveResolvers\AbstractUseDefaultValueIfNullDirectiv
 class UseDefaultFeaturedImageIDIfNullDirectiveResolver extends AbstractUseDefaultValueIfNullDirectiveResolver
 {
     const DIRECTIVE_NAME = 'defaultFeaturedImage';
-    public static function getDirectiveName(): string {
+    public static function getDirectiveName(): string
+    {
         return self::DIRECTIVE_NAME;
     }
 
