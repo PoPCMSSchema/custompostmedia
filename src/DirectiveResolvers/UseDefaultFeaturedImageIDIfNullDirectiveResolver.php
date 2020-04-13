@@ -26,7 +26,8 @@ class UseDefaultFeaturedImageIDIfNullDirectiveResolver extends AbstractUseDefaul
         ];
     }
 
-    protected function getDefaultValue() {
+    protected function getDefaultValue()
+    {
         return Environment::getDefaultFeaturedImageID();
     }
 }

@@ -30,7 +30,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
     public function getSchemaFieldType(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
         $types = [
-			'hasFeaturedImage' => SchemaDefinition::TYPE_BOOL,
+            'hasFeaturedImage' => SchemaDefinition::TYPE_BOOL,
             'featuredImage' => SchemaDefinition::TYPE_ID,
             'featuredImageProps' => SchemaDefinition::TYPE_OBJECT,
         ];
@@ -41,7 +41,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-			'hasFeaturedImage' => $translationAPI->__('Does the post have a featured image?', 'pop-media'),
+            'hasFeaturedImage' => $translationAPI->__('Does the post have a featured image?', 'pop-media'),
             'featuredImage' => $translationAPI->__('Featured image from this post', 'pop-media'),
             'featuredImageProps' => $translationAPI->__('Properties (url, width and height) of the featured image', 'pop-media'),
         ];

@@ -8,4 +8,3 @@ class Environment
         return isset($_ENV['DEFAULT_FEATURED_IMAGE_ID']) ? (int)$_ENV['DEFAULT_FEATURED_IMAGE_ID'] : null;
     }
 }
-
