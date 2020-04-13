@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace PoP\PostMedia\FieldResolvers;
 
 use PoP\Media\Misc\MediaHelpers;
