@@ -6,9 +6,9 @@ namespace PoP\PostMedia\DirectiveResolvers;
 
 use PoP\PostMedia\Environment;
 use PoP\Content\FieldInterfaces\ContentEntityFieldInterfaceResolver;
-use PoP\BasicDirectives\DirectiveResolvers\AbstractUseDefaultValueIfNullDirectiveResolver;
+use PoP\BasicDirectives\DirectiveResolvers\AbstractUseDefaultValueIfConditionDirectiveResolver;
 
-class UseDefaultFeaturedImageIDIfNullDirectiveResolver extends AbstractUseDefaultValueIfNullDirectiveResolver
+class UseDefaultFeaturedImageIDIfConditionDirectiveResolver extends AbstractUseDefaultValueIfConditionDirectiveResolver
 {
     const DIRECTIVE_NAME = 'defaultFeaturedImage';
     public static function getDirectiveName(): string
