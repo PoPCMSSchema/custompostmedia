@@ -1,2 +1,2 @@
 <?php
-\PoP\PostMedia\Component::init();
+//\PoP\PostMedia\Component::initialize();
