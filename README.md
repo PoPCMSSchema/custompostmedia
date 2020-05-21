@@ -20,12 +20,13 @@ Via Composer
 composer require getpop/postmedia
 ```
 
-<!--
 ## Usage
 
+Initialize the component:
+
 ``` php
+\PoP\PostMedia\Component::initialize();
 ```
--->
 
 ## Standards
 
