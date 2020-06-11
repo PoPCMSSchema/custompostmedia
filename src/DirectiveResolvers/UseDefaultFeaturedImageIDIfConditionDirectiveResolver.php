@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace PoP\PostMedia\DirectiveResolvers;
 
 use PoP\PostMedia\Environment;
-use PoP\Content\FieldInterfaces\CustomPostFieldInterfaceResolver;
+use PoP\CustomPosts\FieldInterfaces\CustomPostFieldInterfaceResolver;
 use PoP\BasicDirectives\DirectiveResolvers\AbstractUseDefaultValueIfConditionDirectiveResolver;
 
 class UseDefaultFeaturedImageIDIfConditionDirectiveResolver extends AbstractUseDefaultValueIfConditionDirectiveResolver
