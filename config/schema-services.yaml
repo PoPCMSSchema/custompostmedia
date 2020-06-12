@@ -1,8 +1,8 @@
 services:
-    PoP\PostMedia\DirectiveResolvers\:
+    PoP\CustomPostMedia\DirectiveResolvers\:
         resource: '../src/DirectiveResolvers/*'
         public: true
 
-    PoP\PostMedia\FieldResolvers\:
+    PoP\CustomPostMedia\FieldResolvers\:
         resource: '../src/FieldResolvers/*'
         public: true

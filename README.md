@@ -1,4 +1,4 @@
-# Post Media
+# Custom Post Media
 
 [![Build Status][ico-travis]][link-travis]
 [![Quality Score][ico-code-quality]][link-code-quality]
@@ -17,7 +17,7 @@ Deals with media elements added to posts
 Via Composer
 
 ``` bash
-composer require getpop/postmedia
+composer require getpop/custompostmedia
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ Initialize the component:
 
 ``` php
 \PoP\Root\ComponentLoader::initializeComponents([
-    \PoP\PostMedia\Component::class,
+    \PoP\CustomPostMedia\Component::class,
 ]);
 ```
 
@@ -75,17 +75,17 @@ If you discover any security related issues, please email leo@getpop.org instead
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/getpop/postmedia.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/getpop/custompostmedia.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/getpop/postmedia/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/getpop/postmedia.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/getpop/postmedia.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/getpop/postmedia.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/getpop/custompostmedia/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/getpop/custompostmedia.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/getpop/custompostmedia.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/getpop/custompostmedia.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/getpop/postmedia
-[link-travis]: https://travis-ci.org/getpop/postmedia
-[link-scrutinizer]: https://scrutinizer-ci.com/g/getpop/postmedia/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/getpop/postmedia
-[link-downloads]: https://packagist.org/packages/getpop/postmedia
+[link-packagist]: https://packagist.org/packages/getpop/custompostmedia
+[link-travis]: https://travis-ci.org/getpop/custompostmedia
+[link-scrutinizer]: https://scrutinizer-ci.com/g/getpop/custompostmedia/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/getpop/custompostmedia
+[link-downloads]: https://packagist.org/packages/getpop/custompostmedia
 [link-author]: https://github.com/leoloso
 [link-contributors]: ../../contributors

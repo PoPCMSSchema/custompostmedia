@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\PostMedia\FieldResolvers;
+namespace PoP\CustomPostMedia\FieldResolvers;
 
 use PoP\Media\Misc\MediaHelpers;
 use PoP\Media\TypeResolvers\MediaTypeResolver;

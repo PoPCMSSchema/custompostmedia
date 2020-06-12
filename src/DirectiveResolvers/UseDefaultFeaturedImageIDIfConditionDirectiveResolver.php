@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PoP\PostMedia\DirectiveResolvers;
+namespace PoP\CustomPostMedia\DirectiveResolvers;
 
-use PoP\PostMedia\Environment;
+use PoP\CustomPostMedia\Environment;
 use PoP\CustomPosts\FieldInterfaces\CustomPostFieldInterfaceResolver;
 use PoP\BasicDirectives\DirectiveResolvers\AbstractUseDefaultValueIfConditionDirectiveResolver;
 

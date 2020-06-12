@@ -2,13 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PoP\PostMedia\Misc;
+namespace PoP\CustomPostMedia\Misc;
 
 use PoP\Hooks\Facades\HooksAPIFacade;
 
 class MediaHelpers
 {
-
     public static function getThumbId($post_id)
     {
         $cmsmediapostsapi = \PoP\Media\PostsFunctionAPIFactory::getInstance();

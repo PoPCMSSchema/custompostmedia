@@ -1,12 +1,12 @@
 {
-    "name": "getpop/postmedia",
+    "name": "getpop/custompostmedia",
     "type": "library",
     "description": "Deals with media elements added to posts",
     "keywords": [
         "PoP",
-        "postmedia"
+        "custompostmedia"
     ],
-    "homepage": "https://github.com/PoPSchema/postmedia",
+    "homepage": "https://github.com/PoPSchema/custompostmedia",
     "license": "MIT",
     "authors": [
         {
@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "PoP\\PostMedia\\": "src"
+            "PoP\\CustomPostMedia\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PoP\\PostMedia\\": "tests"
+            "PoP\\CustomPostMedia\\": "tests"
         }
     },
     "scripts": {
