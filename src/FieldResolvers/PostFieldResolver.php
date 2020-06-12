@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace PoP\CustomPostMedia\FieldResolvers;
 
-use PoP\Media\Misc\MediaHelpers;
 use PoP\Media\TypeResolvers\MediaTypeResolver;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
 use PoP\CustomPosts\FieldInterfaces\CustomPostFieldInterfaceResolver;
+use PoP\CustomPostMedia\FieldInterfaceResolvers\SupportingFeaturedImageFieldInterfaceResolver;
 
 class PostFieldResolver extends AbstractDBDataFieldResolver
 {
@@ -18,6 +18,13 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
     {
         return [
             CustomPostFieldInterfaceResolver::class,
+        ];
+    }
+
+    public static function getImplementedInterfaceClasses(): array
+    {
+        return [
+            SupportingFeaturedImageFieldInterfaceResolver::class,
         ];
     }
 
