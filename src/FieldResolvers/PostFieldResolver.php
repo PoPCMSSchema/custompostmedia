@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace PoP\CustomPostMedia\FieldResolvers;
 
 use PoP\Media\TypeResolvers\MediaTypeResolver;
-use PoP\ComponentModel\Schema\SchemaDefinition;
-use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
 use PoP\CustomPosts\FieldInterfaces\CustomPostFieldInterfaceResolver;
+use PoP\ComponentModel\FieldResolvers\FieldSchemaDefinitionResolverInterface;
 use PoP\CustomPostMedia\FieldInterfaceResolvers\SupportingFeaturedImageFieldInterfaceResolver;
 
 class PostFieldResolver extends AbstractDBDataFieldResolver
@@ -36,34 +35,14 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
         ];
     }
 
-    public function getSchemaFieldType(TypeResolverInterface $typeResolver, string $fieldName): ?string
+    /**
+     * By returning `null`, the schema definition comes from the interface
+     *
+     * @return void
+     */
+    public function getSchemaDefinitionResolver(TypeResolverInterface $typeResolver): ?FieldSchemaDefinitionResolverInterface
     {
-        $types = [
-            'hasFeaturedImage' => SchemaDefinition::TYPE_BOOL,
-            'featuredImage' => SchemaDefinition::TYPE_ID,
-        ];
-        return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
-    }
-
-    public function isSchemaFieldResponseNonNullable(TypeResolverInterface $typeResolver, string $fieldName): bool
-    {
-        $nonNullableFieldNames = [
-            'hasFeaturedImage',
-        ];
-        if (in_array($fieldName, $nonNullableFieldNames)) {
-            return true;
-        }
-        return parent::isSchemaFieldResponseNonNullable($typeResolver, $fieldName);
-    }
-
-    public function getSchemaFieldDescription(TypeResolverInterface $typeResolver, string $fieldName): ?string
-    {
-        $translationAPI = TranslationAPIFacade::getInstance();
-        $descriptions = [
-            'hasFeaturedImage' => $translationAPI->__('Does the post have a featured image?', 'pop-media'),
-            'featuredImage' => $translationAPI->__('Featured image from this post', 'pop-media'),
-        ];
-        return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
+        return null;
     }
 
     public function resolveValue(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = [], ?array $variables = null, ?array $expressions = null, array $options = [])
