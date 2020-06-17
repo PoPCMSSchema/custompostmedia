@@ -1,7 +1,7 @@
 {
     "name": "getpop/custompostmedia",
     "type": "library",
-    "description": "Deals with media elements added to posts",
+    "description": "Deals with media elements added to custom posts",
     "keywords": [
         "PoP",
         "custompostmedia"
