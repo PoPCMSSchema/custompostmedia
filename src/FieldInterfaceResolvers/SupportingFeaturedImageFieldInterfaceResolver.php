@@ -20,7 +20,7 @@ class SupportingFeaturedImageFieldInterfaceResolver extends AbstractSchemaFieldI
     public function getSchemaInterfaceDescription(): ?string
     {
         $translationAPI = TranslationAPIFacade::getInstance();
-        return $translationAPI->__('The fundamental fields that must be implemented by all objects', 'component-model');
+        return $translationAPI->__('Fields concerning an entity\'s featured image', 'custompostmedia');
     }
 
     public static function getFieldNamesToImplement(): array
