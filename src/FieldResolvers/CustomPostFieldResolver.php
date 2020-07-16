@@ -51,10 +51,10 @@ class CustomPostFieldResolver extends AbstractDBDataFieldResolver
         $post = $resultItem;
         switch ($fieldName) {
             case 'hasFeaturedImage':
-                return $cmsmediapostsapi->hasPostThumbnail($typeResolver->getID($post));
+                return $cmsmediapostsapi->hasCustomPostThumbnail($typeResolver->getID($post));
 
             case 'featuredImage':
-                return $cmsmediapostsapi->getPostThumbnailId($typeResolver->getID($post));
+                return $cmsmediapostsapi->getCustomPostThumbnailID($typeResolver->getID($post));
         }
 
         return parent::resolveValue($typeResolver, $resultItem, $fieldName, $fieldArgs, $variables, $expressions, $options);

@@ -11,7 +11,7 @@ class MediaHelpers
     public static function getThumbId($post_id)
     {
         $cmsmediapostsapi = \PoP\Media\PostsFunctionAPIFactory::getInstance();
-        if ($thumb_id = $cmsmediapostsapi->getPostThumbnailId($post_id)) {
+        if ($thumb_id = $cmsmediapostsapi->getCustomPostThumbnailID($post_id)) {
             return $thumb_id;
         }
 
