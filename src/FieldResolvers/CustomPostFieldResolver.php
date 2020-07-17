@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PoP\CustomPostMedia\FieldResolvers;
 
-use PoP\Media\TypeResolvers\MediaTypeResolver;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\Facades\Instances\InstanceManagerFacade;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
