@@ -7,7 +7,6 @@ namespace PoP\CustomPostMedia\FieldInterfaceResolvers;
 use PoP\Media\TypeResolvers\MediaTypeResolver;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
-use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldInterfaceResolvers\AbstractSchemaFieldInterfaceResolver;
 
 class SupportingFeaturedImageFieldInterfaceResolver extends AbstractSchemaFieldInterfaceResolver
@@ -32,16 +31,16 @@ class SupportingFeaturedImageFieldInterfaceResolver extends AbstractSchemaFieldI
         ];
     }
 
-    public function getSchemaFieldType(TypeResolverInterface $typeResolver, string $fieldName): ?string
+    public function getSchemaFieldType(string $fieldName): ?string
     {
         $types = [
             'hasFeaturedImage' => SchemaDefinition::TYPE_BOOL,
             'featuredImage' => SchemaDefinition::TYPE_ID,
         ];
-        return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
+        return $types[$fieldName] ?? parent::getSchemaFieldType($fieldName);
     }
 
-    public function isSchemaFieldResponseNonNullable(TypeResolverInterface $typeResolver, string $fieldName): bool
+    public function isSchemaFieldResponseNonNullable(string $fieldName): bool
     {
         $nonNullableFieldNames = [
             'hasFeaturedImage',
@@ -49,17 +48,17 @@ class SupportingFeaturedImageFieldInterfaceResolver extends AbstractSchemaFieldI
         if (in_array($fieldName, $nonNullableFieldNames)) {
             return true;
         }
-        return parent::isSchemaFieldResponseNonNullable($typeResolver, $fieldName);
+        return parent::isSchemaFieldResponseNonNullable($fieldName);
     }
 
-    public function getSchemaFieldDescription(TypeResolverInterface $typeResolver, string $fieldName): ?string
+    public function getSchemaFieldDescription(string $fieldName): ?string
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
             'hasFeaturedImage' => $translationAPI->__('Does the custom post have a featured image?', 'custompostmedia'),
             'featuredImage' => $translationAPI->__('Featured image from the custom post', 'custompostmedia'),
         ];
-        return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
+        return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($fieldName);
     }
 
     /**
