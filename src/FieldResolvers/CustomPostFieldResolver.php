@@ -6,6 +6,7 @@ namespace PoP\CustomPostMedia\FieldResolvers;
 
 use PoP\Media\TypeResolvers\MediaTypeResolver;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
+use PoP\ComponentModel\Facades\Instances\InstanceManagerFacade;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
 use PoP\CustomPosts\FieldInterfaces\CustomPostFieldInterfaceResolver;
 use PoP\ComponentModel\FieldResolvers\FieldSchemaDefinitionResolverInterface;
@@ -64,7 +65,9 @@ class CustomPostFieldResolver extends AbstractDBDataFieldResolver
     {
         switch ($fieldName) {
             case 'featuredImage':
-                return MediaTypeResolver::class;
+                $instanceManager = InstanceManagerFacade::getInstance();
+                $fieldInterfaceResolver = $instanceManager->getInstance(SupportingFeaturedImageFieldInterfaceResolver::class);
+                return $fieldInterfaceResolver->getFieldTypeResolverClass($fieldName, $fieldArgs);
         }
 
         return parent::resolveFieldTypeResolverClass($typeResolver, $fieldName, $fieldArgs);

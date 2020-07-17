@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PoP\CustomPostMedia\FieldInterfaceResolvers;
 
+use PoP\Media\TypeResolvers\MediaTypeResolver;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
@@ -59,5 +60,26 @@ class SupportingFeaturedImageFieldInterfaceResolver extends AbstractSchemaFieldI
             'featuredImage' => $translationAPI->__('Featured image from the custom post', 'custompostmedia'),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
+    }
+
+    /**
+     * This function is not called by the engine, to generate the schema.
+     * Instead, the resolver is obtained from the fieldResolver.
+     * To make sure that all fieldResolvers implementing the same interface
+     * return the expected type for the field, they can obtain it from the
+     * interface through this function.
+     *
+     * @param string $fieldName
+     * @param array $fieldArgs
+     * @return string|null
+     */
+    public function getFieldTypeResolverClass(string $fieldName, array $fieldArgs = []): ?string
+    {
+        switch ($fieldName) {
+            case 'featuredImage':
+                return MediaTypeResolver::class;
+        }
+
+        return parent::getFieldTypeResolverClass($fieldName, $fieldArgs);
     }
 }
