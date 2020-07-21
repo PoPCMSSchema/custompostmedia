@@ -6,3 +6,7 @@ services:
     PoP\CustomPostMedia\FieldResolvers\:
         resource: '../src/FieldResolvers/*'
         public: true
+
+    PoP\CustomPostMedia\FieldInterfaceResolvers\:
+        resource: '../src/FieldInterfaceResolvers/*'
+        public: true
