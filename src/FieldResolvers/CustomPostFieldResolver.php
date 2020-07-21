@@ -7,7 +7,7 @@ namespace PoP\CustomPostMedia\FieldResolvers;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\Facades\Instances\InstanceManagerFacade;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
-use PoP\CustomPosts\FieldInterfaceResolvers\CustomPostFieldInterfaceResolver;
+use PoP\CustomPosts\FieldInterfaceResolvers\IsCustomPostFieldInterfaceResolver;
 use PoP\ComponentModel\FieldResolvers\FieldSchemaDefinitionResolverInterface;
 use PoP\CustomPostMedia\FieldInterfaceResolvers\SupportingFeaturedImageFieldInterfaceResolver;
 
@@ -16,7 +16,7 @@ class CustomPostFieldResolver extends AbstractDBDataFieldResolver
     public static function getClassesToAttachTo(): array
     {
         return [
-            CustomPostFieldInterfaceResolver::class,
+            IsCustomPostFieldInterfaceResolver::class,
         ];
     }
 

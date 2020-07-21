@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace PoP\CustomPostMedia\DirectiveResolvers;
 
 use PoP\CustomPostMedia\Environment;
-use PoP\CustomPosts\FieldInterfaceResolvers\CustomPostFieldInterfaceResolver;
+use PoP\CustomPosts\FieldInterfaceResolvers\IsCustomPostFieldInterfaceResolver;
 use PoP\BasicDirectives\DirectiveResolvers\AbstractUseDefaultValueIfConditionDirectiveResolver;
 
 class UseDefaultFeaturedImageIDIfConditionDirectiveResolver extends AbstractUseDefaultValueIfConditionDirectiveResolver
@@ -19,7 +19,7 @@ class UseDefaultFeaturedImageIDIfConditionDirectiveResolver extends AbstractUseD
     public static function getClassesToAttachTo(): array
     {
         return [
-            CustomPostFieldInterfaceResolver::class,
+            IsCustomPostFieldInterfaceResolver::class,
         ];
     }
     public static function getFieldNamesToApplyTo(): array
