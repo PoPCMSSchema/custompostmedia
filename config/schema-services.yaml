@@ -1,12 +1,12 @@
 services:
-    PoP\CustomPostMedia\DirectiveResolvers\:
+    PoPSchema\CustomPostMedia\DirectiveResolvers\:
         resource: '../src/DirectiveResolvers/*'
         public: true
 
-    PoP\CustomPostMedia\FieldResolvers\:
+    PoPSchema\CustomPostMedia\FieldResolvers\:
         resource: '../src/FieldResolvers/*'
         public: true
 
-    PoP\CustomPostMedia\FieldInterfaceResolvers\:
+    PoPSchema\CustomPostMedia\FieldInterfaceResolvers\:
         resource: '../src/FieldInterfaceResolvers/*'
         public: true

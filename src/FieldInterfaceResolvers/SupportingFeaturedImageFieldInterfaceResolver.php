@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PoP\CustomPostMedia\FieldInterfaceResolvers;
+namespace PoPSchema\CustomPostMedia\FieldInterfaceResolvers;
 
-use PoP\Media\TypeResolvers\MediaTypeResolver;
+use PoPSchema\Media\TypeResolvers\MediaTypeResolver;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\FieldInterfaceResolvers\AbstractSchemaFieldInterfaceResolver;

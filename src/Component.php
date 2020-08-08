@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\CustomPostMedia;
+namespace PoPSchema\CustomPostMedia;
 
 use PoP\Root\Component\AbstractComponent;
 use PoP\Root\Component\YAMLServicesTrait;
@@ -19,9 +19,9 @@ class Component extends AbstractComponent
     public static function getDependedComponentClasses(): array
     {
         return [
-            \PoP\CustomPosts\Component::class,
-            \PoP\Media\Component::class,
-            \PoP\BasicDirectives\Component::class,
+            \PoPSchema\CustomPosts\Component::class,
+            \PoPSchema\Media\Component::class,
+            \PoPSchema\BasicDirectives\Component::class,
         ];
     }
 

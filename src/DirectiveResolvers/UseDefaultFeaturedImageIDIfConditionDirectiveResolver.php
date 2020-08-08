@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PoP\CustomPostMedia\DirectiveResolvers;
+namespace PoPSchema\CustomPostMedia\DirectiveResolvers;
 
-use PoP\CustomPostMedia\Environment;
-use PoP\CustomPosts\FieldInterfaceResolvers\IsCustomPostFieldInterfaceResolver;
-use PoP\BasicDirectives\DirectiveResolvers\AbstractUseDefaultValueIfConditionDirectiveResolver;
+use PoPSchema\CustomPostMedia\Environment;
+use PoPSchema\CustomPosts\FieldInterfaceResolvers\IsCustomPostFieldInterfaceResolver;
+use PoPSchema\BasicDirectives\DirectiveResolvers\AbstractUseDefaultValueIfConditionDirectiveResolver;
 
 class UseDefaultFeaturedImageIDIfConditionDirectiveResolver extends AbstractUseDefaultValueIfConditionDirectiveResolver
 {

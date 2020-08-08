@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\CustomPostMedia\Misc;
+namespace PoPSchema\CustomPostMedia\Misc;
 
 use PoP\Hooks\Facades\HooksAPIFacade;
 
@@ -10,7 +10,7 @@ class MediaHelpers
 {
     public static function getThumbId($post_id)
     {
-        $cmsmediapostsapi = \PoP\Media\PostsFunctionAPIFactory::getInstance();
+        $cmsmediapostsapi = \PoPSchema\Media\PostsFunctionAPIFactory::getInstance();
         if ($thumb_id = $cmsmediapostsapi->getCustomPostThumbnailID($post_id)) {
             return $thumb_id;
         }

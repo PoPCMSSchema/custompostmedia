@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\CustomPostMedia;
+namespace PoPSchema\CustomPostMedia;
 
 class Environment
 {
