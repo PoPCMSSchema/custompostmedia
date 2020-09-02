@@ -79,6 +79,9 @@ class CustomPostFieldResolver extends AbstractDBDataFieldResolver
         switch ($fieldName) {
             case 'featuredImage':
                 $instanceManager = InstanceManagerFacade::getInstance();
+                /**
+                 * @var FieldInterfaceResolverInterface
+                 */
                 $fieldInterfaceResolver = $instanceManager->getInstance(SupportingFeaturedImageFieldInterfaceResolver::class);
                 return $fieldInterfaceResolver->getFieldTypeResolverClass($fieldName, $fieldArgs);
         }
