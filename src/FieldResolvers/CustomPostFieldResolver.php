@@ -74,7 +74,7 @@ class CustomPostFieldResolver extends AbstractDBDataFieldResolver
         return parent::resolveValue($typeResolver, $resultItem, $fieldName, $fieldArgs, $variables, $expressions, $options);
     }
 
-    public function resolveFieldTypeResolverClass(TypeResolverInterface $typeResolver, string $fieldName, array $fieldArgs = []): ?string
+    public function resolveFieldTypeResolverClass(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
         switch ($fieldName) {
             case 'featuredImage':
@@ -83,9 +83,9 @@ class CustomPostFieldResolver extends AbstractDBDataFieldResolver
                  * @var SupportingFeaturedImageFieldInterfaceResolver
                  */
                 $fieldInterfaceResolver = $instanceManager->getInstance(SupportingFeaturedImageFieldInterfaceResolver::class);
-                return $fieldInterfaceResolver->getFieldTypeResolverClass($fieldName, $fieldArgs);
+                return $fieldInterfaceResolver->getFieldTypeResolverClass($fieldName);
         }
 
-        return parent::resolveFieldTypeResolverClass($typeResolver, $fieldName, $fieldArgs);
+        return parent::resolveFieldTypeResolverClass($typeResolver, $fieldName);
     }
 }
