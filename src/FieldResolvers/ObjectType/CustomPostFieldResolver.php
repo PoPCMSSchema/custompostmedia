@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PoPSchema\CustomPostMedia\FieldResolvers;
+namespace PoPSchema\CustomPostMedia\FieldResolvers\ObjectType;
 
-use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
+use PoP\ComponentModel\FieldResolvers\ObjectType\AbstractDBDataFieldResolver;
 use PoP\ComponentModel\HelperServices\SemverHelperServiceInterface;
 use PoP\ComponentModel\Instances\InstanceManagerInterface;
 use PoP\ComponentModel\Schema\FieldQueryInterpreterInterface;
@@ -13,7 +13,7 @@ use PoP\Engine\CMS\CMSServiceInterface;
 use PoP\Hooks\HooksAPIInterface;
 use PoP\LooseContracts\NameResolverInterface;
 use PoP\Translation\TranslationAPIInterface;
-use PoPSchema\CustomPostMedia\InterfaceTypeFieldResolvers\SupportingFeaturedImageInterfaceTypeFieldResolver;
+use PoPSchema\CustomPostMedia\FieldResolvers\InterfaceType\SupportingFeaturedImageInterfaceTypeFieldResolver;
 use PoPSchema\CustomPostMedia\TypeAPIs\CustomPostMediaTypeAPIInterface;
 use PoPSchema\CustomPosts\TypeResolvers\ObjectType\AbstractCustomPostTypeResolver;
 
