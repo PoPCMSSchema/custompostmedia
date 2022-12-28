@@ -10,7 +10,7 @@ use PoPCMSSchema\CustomPosts\TypeResolvers\ObjectType\GenericCustomPostObjectTyp
 use PoP\ComponentModel\App;
 use PoP\ComponentModel\TypeResolvers\ObjectType\ObjectTypeResolverInterface;
 
-class SupportingFeaturedImageGenericCustomPostObjectTypeFieldResolver extends AbstractSupportingFeaturedImageCustomPostObjectTypeFieldResolver
+class WithFeaturedImageGenericCustomPostObjectTypeFieldResolver extends AbstractWithFeaturedImageCustomPostObjectTypeFieldResolver
 {
     /**
      * @return array<class-string<ObjectTypeResolverInterface>>
